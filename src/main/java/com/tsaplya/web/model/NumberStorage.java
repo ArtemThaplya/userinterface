@@ -37,4 +37,12 @@ public class NumberStorage {
     public void setMagicNumber(int magicNumber) {
         this.magicNumber = magicNumber;
     }
+
+    @Override
+    public String toString() {
+        return "NumberStorage{" +
+                "id=" + id +
+                ", magicNumber=" + magicNumber +
+                '}';
+    }
 }
