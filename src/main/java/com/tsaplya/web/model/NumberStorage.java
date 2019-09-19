@@ -1,4 +1,4 @@
-package com.tsaplya.web;
+package com.tsaplya.web.model;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
