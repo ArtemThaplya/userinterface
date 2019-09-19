@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+</head>
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+
+
+<body>
+<form id="frm1" action="/sum">
+    First number: <input type="text" id="1" value="1"><br>
+    Second number: <input type="text" id="2" value="2"><br>
+    <button type="button"  onclick="myFunction()">Try it</button>
+</form>
+<!--<form id="frm2" action="/subtraction">-->
+<!--    Second number: <label>-->
+<!--    <input type="text" name="lname">-->
+<!--</label><br><br>-->
+<!--    <input type="button" onclick="myFunction()" value="Submit">-->
+<!--</form>-->
+</body>
+<script type="text/javascript">
+    function myFunction() {
+        var x = document.getElementById("1").value;
+        var y = document.getElementById("2").value;
+        document.getElementById("demo").innerHTML = x;
+    }
+</script>
+</html>

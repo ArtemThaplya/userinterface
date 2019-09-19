@@ -1,5 +1,7 @@
 package com.tsaplya.web.service;
 
+import com.tsaplya.web.service.Interfaces.SubtractionOfNumbersService;
+import com.tsaplya.web.service.Interfaces.SumOfNumbersService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
