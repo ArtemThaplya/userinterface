@@ -1,9 +1,36 @@
-form{
+body {
+    background-image: url(../img/background2.png);
+}
+
+form {
     display: inline-block;
 }
+
 #square {
     margin-top: 15px;
+    -webkit-border-radius: 4px;
     width: 30px;
     height: 30px;
     background: #FFFF00;
+}
+
+button {
+    -webkit-border-radius: 4px;
+}
+
+input {
+    margin-top: 5px;
+    border: 1px solid #D8BFD8;
+    -webkit-border-radius: 3px;
+    background: #ffffff !important;
+    outline: none;
+    height: 19px;
+    width: 120px;
+    color: #D8BFD8;
+    font-size: 11px;
+}
+
+label {
+    color: #87CEFA;
+    margin-right: 5px;
 }
