@@ -1,0 +1,9 @@
+form{
+    display: inline-block;
+}
+#square {
+    margin-top: 15px;
+    width: 30px;
+    height: 30px;
+    background: #FFFF00;
+}
