@@ -11,7 +11,7 @@ import javax.persistence.*;
 public class NumberStorage {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "id")
+    @Column(name = "firstNumber")
     private int id;
 
     @Column(name = "magicNumber")
@@ -41,7 +41,7 @@ public class NumberStorage {
     @Override
     public String toString() {
         return "NumberStorage{" +
-                "id=" + id +
+                "firstNumber=" + id +
                 ", magicNumber=" + magicNumber +
                 '}';
     }
