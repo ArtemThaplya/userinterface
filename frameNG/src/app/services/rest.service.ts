@@ -1,5 +1,6 @@
 import {Injectable} from '@angular/core';
-import {HttpClient, HttpHeaders} from '@angular/common/http';
+import {HttpClient, HttpHeaders, HttpParams} from '@angular/common/http';
+import {Numbers} from "../model/numbers";
 
 const httpOptions = {
   headers: new HttpHeaders({
@@ -19,13 +20,13 @@ export class RestService {
   constructor(private http: HttpClient) {
   }
 
-  sum(firstNumber: number, secondNumber: number) {
-    const url = `${this.baseUrl}/${this.sumSuffix}/${firstNumber}/${secondNumber}`;
-    return this.http.post(url, httpOptions);
+  sum(numbers: Numbers) {
+    const url = `${this.baseUrl}/${this.sumSuffix}`;
+    return this.http.post(url, numbers, httpOptions);
   }
 
-  subtraction(firstNumber: number, secondNumber: number) {
-    const url = `${this.baseUrl}/${this.subtractionSuffix}/${firstNumber}/${secondNumber}`;
-    return this.http.post(url, httpOptions);
+  subtraction(numbers: Numbers) {
+    const url = `${this.baseUrl}/${this.subtractionSuffix}`;
+    return this.http.post(url, numbers, httpOptions);
   }
 }

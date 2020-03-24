@@ -1,14 +1,15 @@
 package com.tsaplya.web.controller;
 
+import com.tsaplya.web.model.Numbers;
 import com.tsaplya.web.service.OperationService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import static org.springframework.web.bind.annotation.RequestMethod.GET;
 
 @RestController
 public class NumberController {
@@ -20,19 +21,20 @@ public class NumberController {
         this.operationService = operationService;
     }
 
-    @RequestMapping(value = "/sum")
-    public int getSum(@RequestParam(value = "firstNumber") int firstNumber,
-                      @RequestParam(value = "secondNumber") int secondNumber) {
-        int sumOfNumbers = operationService.getSumOfNumbers(firstNumber, secondNumber);
+    @PostMapping("/sum")
+    public ResponseEntity<String> getSum(@RequestBody Numbers numbers) {
+        int sumOfNumbers = operationService
+            .getSumOfNumbers(numbers.getFirstNumber(), numbers.getSecondNumber());
         LOGGER.info("Done! Result: "+ sumOfNumbers);
-        return sumOfNumbers;
+        return ResponseEntity.ok("");
     }
 
-    @RequestMapping(value = "/subtraction", method = GET)
-    public int getSubtraction(@RequestParam(value = "firstNumber") int firstNumber,
-                              @RequestParam(value = "secondNumber") int secondNumber) {
-        int subtractionNumbers = operationService.getSubtractionNumbers(firstNumber, secondNumber);
+    @PostMapping("/subtraction")
+    public ResponseEntity<String> getSubtraction(
+        @RequestBody Numbers numbers) {
+        int subtractionNumbers = operationService
+            .getSubtractionNumbers(numbers.getFirstNumber(), numbers.getSecondNumber());
         LOGGER.info("Done! Result: "+ subtractionNumbers);
-        return subtractionNumbers;
+        return ResponseEntity.ok("");
     }
 }

@@ -1,23 +1,28 @@
 <label>Enter first number:</label>
+
+
 <input type="number"
-       [(ngModel)]="firstNumber"
+       name ="firstNumber"
+       [(ngModel)]="numbers.firstNumber"
        value="1"
        onfocus="this.value=''"><br/>
 <label>Enter second number:</label>
 
 <input type="number"
-       [(ngModel)]="secondNumber"
+       name="secondNumber"
+       [(ngModel)]="numbers.secondNumber"
        value="1"
        onfocus="this.value=''"><br/>
 
-<form (ngSubmit)="sum()">
   <button id="sum"
+          (click)="sum()"
           type="button">+
   </button>
-</form>
-<form (ngSubmit)="subtraction()">
+
+
   <button id="subtraction"
+          (click)="subtraction()"
           type="button">-
   </button>
-</form>
+
 <div id="square"></div>
